@@ -9,9 +9,11 @@ class IndexController extends Controller {
         $shell = "cd /www/wwwroot/learn_tp3/ && pwd && sudo git pull 2>&1";
         exec($shell,$out);
         if ($this->rmm($out) == False){
+            echo 4;
             echo '<pre>';
             print_r($out);
         };
+        echo 5;
     }
     public function p(){
         echo '2';
@@ -20,11 +22,14 @@ class IndexController extends Controller {
         $is = False;
         if ($array != ''){
             foreach ($array as $k=>$v){
+                echo '1';
                 if (strpos($v,'error') !== false){
+                    echo 2;
                     $err = $k + 1;
                     $exec = 'rm -rf '.trim($array[0]).'/'.trim($array[$err]);
                     exec($exec);
                     $this->pull();
+                    echo 3;
                     $is = True;
                     break;
                 }
