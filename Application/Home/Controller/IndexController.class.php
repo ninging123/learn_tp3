@@ -9,9 +9,10 @@ class IndexController extends Controller {
         $shell = "cd /www/wwwroot/learn_tp3/ && pwd && sudo git pull 2>&1";
         exec($shell,$out);
         echo '<pre>';
+        $end = end($out);
         var_dump($out);
     }
     public function p(){
-        echo '1';
+        echo '2';
     }
 }
