@@ -12,6 +12,6 @@ class IndexController extends Controller {
         var_dump($out);
     }
     public function p(){
-        echo '10';
+        echo '1';
     }
 }
