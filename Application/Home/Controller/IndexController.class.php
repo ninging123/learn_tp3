@@ -8,6 +8,7 @@ class IndexController extends Controller {
     public function pull(){
         $shell = "cd /www/wwwroot/learn_tp3/ && pwd && sudo git pull 2>&1";
         exec($shell,$out);
+        echo '<pre>';
         var_dump($out);
     }
     public function p(){
