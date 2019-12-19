@@ -10,6 +10,6 @@ class IndexController extends Controller {
         print_r($system);
     }
     public function p(){
-        echo '1';
+        echo '2';
     }
 }
