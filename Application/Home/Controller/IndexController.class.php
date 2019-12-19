@@ -8,33 +8,31 @@ class IndexController extends Controller {
     public function pull(){
         $shell = "cd /www/wwwroot/learn_tp3/ && pwd && sudo git pull 2>&1";
         exec($shell,$out);
-        $this->rmm($out);
         echo '<pre>';
         print_r($out);
-        echo 5;
     }
-    public function p(){
-        echo '2';
-    }
-    private function rmm($array = array()){
-        $file= '/www/wwwroot/learn_tp3/';
-        $is = False;
-        if ($array != ''){
-            foreach ($array as $k=>$v){
-                echo '1';
-                if (strpos($v,'error') !== false){
-                    echo 2;
-                    $err = $k + 1;
-                    $exec = 'rm -rf '.$file.trim($array[$err]);
-                    exec($exec);
-                    $this->pull();
-                    echo 3;
-                    $is = True;
-                    break;
-                }
-            }
-        }
-        return $is;
-
-    }
+//    public function p(){
+//        echo '3';
+//    }
+//    private function rmm($array = array()){
+//        $file= '/www/wwwroot/learn_tp3/';
+//        $is = False;
+//        if ($array != ''){
+//            foreach ($array as $k=>$v){
+//                echo '1';
+//                if (strpos($v,'error') !== false){
+//                    echo 2;
+//                    $err = $k + 1;
+//                    $exec = 'rm -rf '.$file.trim($array[$err]);
+//                    exec($exec);
+//                    $this->pull();
+//                    echo 3;
+//                    $is = True;
+//                    break;
+//                }
+//            }
+//        }
+//        return $is;
+//
+//    }
 }
