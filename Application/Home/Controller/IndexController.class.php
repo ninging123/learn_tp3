@@ -17,6 +17,7 @@ class IndexController extends Controller {
         echo '2';
     }
     private function rmm($array = array()){
+        $file= '/www/wwwroot/learn_tp3/';
         $is = False;
         if ($array != ''){
             foreach ($array as $k=>$v){
@@ -24,7 +25,7 @@ class IndexController extends Controller {
                 if (strpos($v,'error') !== false){
                     echo 2;
                     $err = $k + 1;
-                    $exec = 'rm -rf '.trim($array[0]).'/'.trim($array[$err]);
+                    $exec = 'rm -rf '.$file.trim($array[$err]);
                     exec($exec);
                     $this->pull();
                     echo 3;
