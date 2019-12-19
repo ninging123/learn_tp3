@@ -8,11 +8,9 @@ class IndexController extends Controller {
     public function pull(){
         $shell = "cd /www/wwwroot/learn_tp3/ && pwd && sudo git pull 2>&1";
         exec($shell,$out);
-        if ($this->rmm($out) == False){
-            echo 4;
-            echo '<pre>';
-            print_r($out);
-        };
+        $this->rmm($out);
+        echo '<pre>';
+        print_r($out);
         echo 5;
     }
     public function p(){
