@@ -9,4 +9,7 @@ class IndexController extends Controller {
         $system = system('git pull');
         print_r($system);
     }
+    public function p(){
+        echo '1';
+    }
 }
